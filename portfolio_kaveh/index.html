@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kaveh OSTAD - Portfolio</title>
+<meta name="description" content="Portfolio de Kaveh OSTAD, étudiant en BTS SIO SLAM à l'EFREI Paris, en recherche d'alternance Bac+3 Data pour 2026. Réalisations E5, E6, projets data et veille technologique.">
+<meta name="keywords" content="Kaveh OSTAD, BTS SIO, SLAM, EFREI, portfolio, data analyst, alternance, SQL, BigQuery, E5, E6">
+<meta name="author" content="Kaveh OSTAD">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Kaveh OSTAD — Portfolio BTS SIO SLAM · Data Analyst">
+<meta property="og:description" content="Étudiant BTS SIO SLAM à l'EFREI Paris. Recherche alternance Bac+3 Data — rentrée 2026.">
+<meta property="og:type" content="website">
+
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2300d4ff'/%3E%3Ctext x='50' y='62' text-anchor='middle' font-family='Arial' font-weight='800' font-size='50' fill='%23050b15'%3EK%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<!-- Curseur custom -->
+<div class="cursor"></div>
+<div class="cursor-ring"></div>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="index.html" class="nav-logo">KO.</a>
+
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="e5.html">E5</a></li>
+      <li><a href="e6.html">E6</a></li>
+      <li><a href="veille.html">Veille</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <div class="nav-socials">
+      <a href="https://www.linkedin.com/in/kaveh-ostad/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      <a href="https://github.com/Su-Kaveh" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12 0 17.302 3.438 21.8 8.207 23.387c.6.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+      </a>
+    </div>
+
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Changer de thème">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    </button>
+
+    <button class="nav-burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<main class="page">
+
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <section class="hero">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-glow2"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        Recherche alternance Bac+3 Data · Rentrée 2026
+      </div>
+
+      <h1 class="hero-title">
+        Kaveh
+        <span>OSTAD</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Étudiant en <strong style="color:var(--text-strong)">BTS SIO option SLAM</strong> à l'EFREI Paris, en recherche d'<strong style="color:var(--accent)">alternance Bac+3 Data</strong> pour la rentrée 2026. Passionné par l'<strong style="color:var(--text-strong)">analyse de données</strong>, le développement web et les solutions applicatives métier. Ce portfolio retrace mes réalisations dans le cadre des épreuves <strong style="color:var(--accent)">E5</strong> et <strong style="color:var(--accent)">E6</strong>.
+      </p>
+
+      <div class="hero-cta">
+        <a href="assets/docs/cv.pdf" class="btn-primary" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          Voir mon CV
+        </a>
+        <a href="assets/docs/cv.pdf" class="btn-secondary" download>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Télécharger
+        </a>
+        <a href="e5.html" class="btn-secondary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          Mes réalisations
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number" data-target="2" data-suffix=" ans">0</span>
+          <span class="stat-label">BTS SIO SLAM</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="4" data-suffix=" mois">0</span>
+          <span class="stat-label">Stages réalisés</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="4" data-suffix="">0</span>
+          <span class="stat-label">Projets aboutis</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="2" data-suffix="">0</span>
+          <span class="stat-label">Certifications</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-photo">
+      <div class="hero-photo-wrapper">
+        <img src="assets/images/photo-profil.jpg" alt="Kaveh OSTAD">
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ À PROPOS / PRÉSENTATION ═══════════════ -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-tag">À propos</div>
+      <h2 class="section-title">Qui suis-je ?</h2>
+    </div>
+
+    <div class="card-grid" style="grid-template-columns:1fr 1fr;">
+      <div class="card reveal">
+        <div class="card-accent"></div>
+        <h2><span class="icon">👋</span> Présentation</h2>
+        <p>Je m'appelle Kaveh OSTAD, étudiant en deuxième année de BTS SIO option SLAM (Solutions Logicielles et Applications Métiers) à l'<strong style="color:var(--accent)">EFREI Paris</strong>.</p>
+        <p style="margin-top:12px;">Mon parcours est <strong style="color:var(--text-strong)">polyvalent</strong> : après un BTS MCO (Management Commercial) obtenu avec mention Bien et 2 ans en alternance comme Assistant Manager, j'ai choisi de me réorienter vers l'informatique. Mes deux stages au <strong>Ministère de la Justice (DISP)</strong> m'ont permis de découvrir l'environnement IT d'une grande administration.</p>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-accent"></div>
+        <h2><span class="icon">📊</span> Mon orientation Data</h2>
+        <p>Mon expérience commerciale m'a appris à <strong style="color:var(--text-strong)">piloter par les KPIs</strong> (CA, marge, taux de conversion). Aujourd'hui, je veux pousser cette logique plus loin avec les outils data : <strong style="color:var(--accent)">SQL, BigQuery, Power BI, Metabase</strong>.</p>
+        <p style="margin-top:12px;">Je recherche actuellement une <strong style="color:var(--text-strong)">alternance Bac+3 spécialisée Data</strong> pour la rentrée 2026 (rythme 3 jours entreprise / 2 jours école), dans l'objectif de devenir <strong style="color:var(--accent)">Data Analyst</strong>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ PARCOURS ═══════════════ -->
+  <section class="section" style="padding-top:0;">
+    <div class="section-header">
+      <div class="section-tag">Parcours</div>
+      <h2 class="section-title">Académique &amp; professionnel</h2>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-period">2026 — 2027 · À venir</div>
+          <h3>Licence ou Bachelor spécialisé Data</h3>
+          <div class="timeline-place">Recherche d'alternance · 3 jours entreprise / 2 jours école</div>
+          <p>Poursuite d'études en alternance avec une spécialisation <strong style="color:var(--text-strong)">Data Analyse</strong> : automatisation, bases de données, requêtes SQL avancées.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-period">Nov. — Déc. 2025 · 6 semaines</div>
+          <h3>Stage 2 — Technicien Support IT</h3>
+          <div class="timeline-place">Ministère de la Justice · DISP de Fresnes (94260)</div>
+          <p>Approfondissement des missions : gestion des flux d'incidents (GLPI), coordination transverse avec les services Budget/Finances et RH, rédaction de rapports techniques selon le référentiel <strong>ITIL</strong>.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-period">Juin — Juillet 2025 · 4 semaines</div>
+          <h3>Stage 1 — Technicien Support IT</h3>
+          <div class="timeline-place">Ministère de la Justice · DISP de Fresnes (94260)</div>
+          <p>Découverte du métier : priorisation des incidents avec GLPI, gestion du parc informatique, accompagnement des utilisateurs et documentation des procédures.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-period">2024 — 2026</div>
+          <h3>BTS SIO option SLAM</h3>
+          <div class="timeline-place">EFREI Paris</div>
+          <p>Solutions Logicielles et Applications Métiers : bases de données, analyse de données, gestion de projet (GANTT, Agile), développement web et applicatif.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-period">Sep. 2022 — Août 2024</div>
+          <h3>Assistant Manager — Alternance</h3>
+          <div class="timeline-place">Besson Chaussures · Créteil (94000)</div>
+          <p>2 ans d'alternance pendant le BTS MCO : pilotage de la performance via Excel (analyse quotidienne des KPIs CA, marge, taux de conversion), élaboration de tableaux de bord pour l'aide à la décision.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-period">2022 — 2024</div>
+          <h3>BTS MCO — Management Commercial Opérationnel</h3>
+          <div class="timeline-place">IEF2I · Mention Bien (14,42/20)</div>
+          <p>Relation client (20/20), management d'équipe, argumentaire de vente, analyse de marché, veille commerciale. Première expérience qui m'a appris à <strong style="color:var(--text-strong)">piloter par les chiffres</strong>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ CERTIFICATIONS ═══════════════ -->
+  <section class="section" style="padding-top:0;">
+    <div class="section-header">
+      <div class="section-tag">Certifications</div>
+      <h2 class="section-title">Mes certifications obtenues</h2>
+    </div>
+
+    <div class="card-grid" style="grid-template-columns:repeat(auto-fit, minmax(380px, 1fr));">
+      <div class="card reveal">
+        <div class="card-accent"></div>
+        <div class="cert-image-wrapper">
+          <!-- Remplacer par : <img src="assets/certifications/pix.jpg" alt="Certificat PIX"> -->
+          <div class="cert-placeholder">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+            <span>Certificat PIX</span>
+          </div>
+        </div>
+        <h3 style="margin-top:16px;">Certification PIX</h3>
+        <p>Évaluation et certification officielle des compétences numériques selon le cadre de référence européen <strong style="color:var(--text-strong)">CRCN</strong> (Cadre de Référence des Compétences Numériques).</p>
+        <div class="skill-tags" style="margin-top:12px;">
+          <span class="tag">Numérique</span>
+          <span class="tag">CRCN</span>
+          <span class="tag">Officiel État</span>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-accent"></div>
+        <div class="cert-image-wrapper">
+          <img src="assets/certifications/anssi.jpg" alt="Attestation MOOC SecNumAcadémie ANSSI - Kaveh OSTAD">
+        </div>
+        <h3 style="margin-top:16px;">MOOC SecNumAcadémie — ANSSI</h3>
+        <p>Formation officielle de l'<strong style="color:var(--text-strong)">Agence Nationale de la Sécurité des Systèmes d'Information</strong> · 4 modules réussis avec <strong style="color:var(--accent)">100% à chaque évaluation</strong> (27 juin 2025).</p>
+        <ul style="margin-top:12px;font-size:0.85rem;">
+          <li>Panorama de la SSI · 100%</li>
+          <li>Sécurité de l'authentification · 100%</li>
+          <li>Sécurité sur Internet · 100%</li>
+          <li>Sécurité du poste de travail · 100%</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ EXPLORER LE PORTFOLIO ═══════════════ -->
+  <section class="section" style="padding-top:0;">
+    <div class="section-header">
+      <div class="section-tag">Portfolio</div>
+      <h2 class="section-title">Explorer mes réalisations</h2>
+    </div>
+
+    <div class="card-grid">
+      <a href="e5.html" class="card reveal" style="text-decoration:none;">
+        <div class="card-accent"></div>
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;">
+          <div class="epreuve-badge">E5</div>
+          <div>
+            <div style="font-size:0.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;">Coefficient 4 · Oral 40 min</div>
+            <div style="font-size:1rem;font-weight:700;color:var(--text-strong);">Support &amp; mise à disposition</div>
+          </div>
+        </div>
+        <p>Présentation des compétences C1 à C18 à travers mes réalisations en formation et en entreprise (DISP).</p>
+        <div style="margin-top:16px;color:var(--accent);font-size:0.82rem;font-weight:700;">Découvrir l'épreuve E5 →</div>
+      </a>
+
+      <a href="e6.html" class="card reveal" style="text-decoration:none;">
+        <div class="card-accent"></div>
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;">
+          <div class="epreuve-badge epreuve-badge-alt">E6</div>
+          <div>
+            <div style="font-size:0.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;">Conception &amp; développement</div>
+            <div style="font-size:1rem;font-weight:700;color:var(--text-strong);">Projets SLAM</div>
+          </div>
+        </div>
+        <p>Développement du client lourd et du client léger Promex, avec architecture, base de données et tests.</p>
+        <div style="margin-top:16px;color:var(--accent3);font-size:0.82rem;font-weight:700;">Voir les projets →</div>
+      </a>
+
+      <a href="veille.html" class="card reveal" style="text-decoration:none;">
+        <div class="card-accent"></div>
+        <h2><span class="icon">📡</span> Veille technologique</h2>
+        <p>L'essor du <strong style="color:var(--accent)">Low-Code / No-Code</strong> dans le développement logiciel — méthodes Pull &amp; Push.</p>
+        <div class="skill-tags" style="margin-top:16px;">
+          <span class="tag">Low-Code</span>
+          <span class="tag">No-Code</span>
+          <span class="tag">RSS</span>
+        </div>
+      </a>
+
+      <a href="projets.html" class="card reveal" style="text-decoration:none;">
+        <div class="card-accent"></div>
+        <h2><span class="icon">🚀</span> Mes projets</h2>
+        <p>Projets <strong style="color:var(--accent)">Data &amp; Web</strong> : analyse de flux aéroportuaire (BigQuery, Metabase), WebStock (PHP/Python/SQL), et applications métier réalisées en formation.</p>
+        <div class="skill-tags" style="margin-top:16px;">
+          <span class="tag">SQL</span>
+          <span class="tag">BigQuery</span>
+          <span class="tag">PHP</span>
+          <span class="tag">Python</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2026 Kaveh OSTAD — BTS SIO SLAM · EFREI Paris</span>
+  <span>
+    <a href="https://www.linkedin.com/in/kaveh-ostad/" target="_blank" rel="noopener">LinkedIn</a>
+    ·
+    <a href="https://github.com/Su-Kaveh" target="_blank" rel="noopener">GitHub</a>
+    ·
+    <a href="mailto:kavehostadpro@gmail.com">Email</a>
+    ·
+    <a href="contact.html">Contact</a>
+  </span>
+</footer>
+
+<script src="assets/js/main.js"></script>
+
+<!-- Styles spécifiques à la home (timeline, cert, badges) -->
+<style>
+/* ─── TIMELINE ─── */
+.timeline {
+  position: relative;
+  padding-left: 32px;
+  max-width: 900px;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 9px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--accent), var(--accent3), transparent);
+  opacity: 0.4;
+}
+.timeline-item {
+  position: relative;
+  padding-bottom: 36px;
+}
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-dot {
+  position: absolute;
+  left: -32px;
+  top: 6px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 12px var(--glow);
+}
+.timeline-dot::after {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.timeline-content {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 24px;
+  transition: all 0.3s ease;
+}
+.timeline-content:hover {
+  border-color: var(--border-strong);
+  transform: translateX(4px);
+}
+.timeline-period {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.timeline-content h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-strong);
+  margin-bottom: 4px;
+}
+.timeline-place {
+  font-size: 0.88rem;
+  color: var(--muted);
+  font-weight: 500;
+  margin-bottom: 8px;
+  font-style: italic;
+}
+.timeline-content p {
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ─── CERTIFICATIONS PLACEHOLDER ─── */
+.cert-image-wrapper {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(135deg, var(--card2), var(--card));
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.cert-image-wrapper:hover {
+  transform: scale(1.02);
+  border-color: var(--border-strong);
+}
+.cert-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 8px;
+  background: #ffffff;
+}
+.cert-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: var(--muted);
+}
+.cert-placeholder span {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ─── EPREUVE BADGES ─── */
+.epreuve-badge {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 20%, transparent), color-mix(in srgb, var(--accent) 5%, transparent));
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 1.3rem;
+  color: var(--accent);
+}
+.epreuve-badge-alt {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent3) 15%, transparent), color-mix(in srgb, var(--accent3) 3%, transparent));
+  border-color: color-mix(in srgb, var(--accent3) 20%, transparent);
+  color: var(--accent3);
+}
+
+/* Sur mobile, la grille à 2 colonnes redevient 1 colonne */
+@media (max-width: 768px) {
+  .card-grid[style*="1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+</style>
+
+</body>
+</html>

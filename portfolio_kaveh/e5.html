@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kaveh OSTAD - E5 : Compétences C1 → C22</title>
+<meta name="description" content="Tableau des 22 compétences BTS SIO SLAM de Kaveh OSTAD — C1 à C22, réparties sur 6 catégories avec preuves et réalisations.">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2300d4ff'/%3E%3Ctext x='50' y='62' text-anchor='middle' font-family='Arial' font-weight='800' font-size='50' fill='%23050b15'%3EK%3C/text%3E%3C/svg%3E">
+<style>
+/* ─── BOUTONS TÉLÉCHARGEMENT ─── */
+.dl-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 7px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  cursor: none;
+}
+.dl-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+.dl-btn.dl-primary {
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  border-color: color-mix(in srgb, var(--accent) 35%, transparent);
+  color: var(--accent);
+}
+.dl-btn.dl-primary:hover {
+  background: color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+/* ─── IMAGE PREUVE ─── */
+.comp-proof-img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #fff;
+  display: block;
+  cursor: zoom-in;
+  transition: transform 0.2s;
+}
+.comp-proof-img:hover { transform: scale(1.01); }
+.e5-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+/* ══════════════════════════════════════════
+   HEADER STATS
+══════════════════════════════════════════ */
+.e5-stats {
+  display: flex;
+  gap: 12px;
+  margin-top: 36px;
+  flex-wrap: wrap;
+}
+.e5-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+  padding: 16px 20px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.e5-stat:hover {
+  border-color: var(--border-strong);
+  box-shadow: 0 4px 16px var(--glow);
+}
+.e5-stat:nth-child(3) {
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  border-color: color-mix(in srgb, var(--accent) 40%, transparent);
+}
+.e5-stat-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+}
+.e5-stat-label {
+  font-size: 0.65rem;
+  color: var(--muted);
+  margin-top: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  text-align: center;
+}
+
+/* ══════════════════════════════════════════
+   NAVIGATION CATÉGORIES STICKY
+══════════════════════════════════════════ */
+.e5-cat-nav {
+  position: sticky;
+  top: 73px;
+  z-index: 90;
+  background: color-mix(in srgb, var(--bg) 95%, transparent);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.e5-cat-nav::-webkit-scrollbar { display: none; }
+.e5-cat-nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 48px;
+  display: flex;
+  gap: 0;
+  width: 100%;
+}
+.cat-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 13px 16px;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+  background: none;
+  border-top: none; border-left: none; border-right: none;
+  cursor: none;
+  font-family: inherit;
+}
+.cat-btn:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.cat-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* ══════════════════════════════════════════
+   SECTIONS
+══════════════════════════════════════════ */
+.e5-section {
+  padding: 72px 0 40px;
+  border-bottom: 1px solid var(--border);
+  scroll-margin-top: 160px;
+}
+.e5-section:last-of-type { border-bottom: none; }
+
+.cat-header { margin-bottom: 36px; }
+
+.cat-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  margin-bottom: 10px;
+  opacity: 0.8;
+  display: block;
+}
+.cat-tag::before { content: '// '; opacity: 0.5; }
+
+.cat-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-weight: 800;
+  color: var(--text-strong);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.cat-title em {
+  font-style: normal;
+  color: var(--accent);
+}
+.cat-desc {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  max-width: 560px;
+  line-height: 1.65;
+}
+
+/* ══════════════════════════════════════════
+   ACCORDÉON COMPÉTENCES — style Lina Karouche
+══════════════════════════════════════════ */
+.comp-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Fade-in séquentiel à l'apparition */
+@keyframes compItemIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.comp-item {
+  animation: compItemIn 0.35s ease both;
+}
+
+.comp-item {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--card);
+  transition: border-color 0.2s ease;
+}
+.comp-item:hover { border-color: var(--border-strong); }
+.comp-item.open { border-color: var(--accent); }
+
+.comp-item-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 22px;
+  cursor: none;
+}
+
+.comp-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+  padding: 3px 9px;
+  border-radius: 6px;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+
+.comp-item-info {
+  flex: 1;
+  min-width: 0;
+}
+.comp-item-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--text-strong);
+  line-height: 1.3;
+  display: block;
+}
+
+.comp-status {
+  font-size: 0.62rem;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 100px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  flex-shrink: 0;
+}
+.comp-status.validee {
+  background: color-mix(in srgb, var(--accent3) 12%, transparent);
+  color: var(--accent3);
+  border: 1px solid color-mix(in srgb, var(--accent3) 25%, transparent);
+}
+.comp-status.partielle {
+  background: color-mix(in srgb, #fbbf24 10%, transparent);
+  color: #fbbf24;
+  border: 1px solid color-mix(in srgb, #fbbf24 25%, transparent);
+}
+.comp-status.en-cours {
+  background: color-mix(in srgb, var(--muted) 10%, transparent);
+  color: var(--muted);
+  border: 1px solid color-mix(in srgb, var(--muted) 20%, transparent);
+}
+
+.comp-expand {
+  width: 28px; height: 28px;
+  border-radius: 6px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 1.3rem;
+  font-weight: 300;
+  cursor: none;
+  display: flex; align-items: center; justify-content: center;
+  transition: transform 0.3s ease, color 0.2s, border-color 0.2s;
+  flex-shrink: 0;
+  line-height: 1;
+  padding-bottom: 1px;
+  font-family: inherit;
+}
+.comp-item.open .comp-expand {
+  transform: rotate(45deg);
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* Corps accordéon */
+.comp-item-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.comp-item.open .comp-item-body { max-height: 1400px; }
+
+.comp-body-inner {
+  padding: 0 22px 22px;
+  border-top: 1px solid var(--border);
+  padding-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.comp-body-quote {
+  font-style: italic;
+  color: var(--text);
+  font-size: 0.85rem;
+  padding: 10px 14px;
+  background: color-mix(in srgb, var(--accent) 5%, transparent);
+  border-left: 2px solid var(--accent);
+  border-radius: 4px;
+  line-height: 1.6;
+}
+
+.comp-body-section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.comp-body-text {
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.75;
+}
+
+.comp-body-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.comp-projet-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 12px;
+  background: color-mix(in srgb, var(--accent3) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent3) 20%, transparent);
+  border-radius: 6px;
+  font-size: 0.75rem;
+  color: var(--accent3);
+  font-weight: 600;
+}
+.comp-projet-tag::before { content: '📁'; font-size: 0.7rem; }
+
+.comp-tool-tag {
+  padding: 3px 10px;
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  font-size: 0.68rem;
+  color: var(--accent);
+  font-weight: 600;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.comp-body-img {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  max-height: 380px;
+  object-fit: contain;
+  background: #fff;
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .e5-wrap { padding: 0 32px; }
+  .e5-cat-nav-inner { padding: 0 32px; }
+  .e5-section { padding: 56px 0 32px; }
+}
+@media (max-width: 768px) {
+  .e5-wrap { padding: 0 20px; }
+  .e5-cat-nav-inner { padding: 0 20px; }
+  .e5-section { padding: 44px 0 24px; scroll-margin-top: 130px; }
+  .e5-stats { gap: 8px; }
+  .e5-stat { min-width: 80px; padding: 12px 14px; }
+  .e5-stat-num { font-size: 1.5rem; }
+  .comp-item-header { padding: 14px 16px; gap: 10px; }
+  .comp-item-title { font-size: 0.85rem; }
+  .cat-title { font-size: 2rem; }
+}
+</style>
+</head>
+<body>
+
+<div class="cursor"></div>
+<div class="cursor-ring"></div>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="index.html" class="nav-logo">KO.</a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="e5.html" class="active">E5</a></li>
+      <li><a href="e6.html">E6</a></li>
+      <li><a href="veille.html">Veille</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-socials">
+      <a href="https://www.linkedin.com/in/kaveh-ostad/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      <a href="https://github.com/Su-Kaveh" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.6.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+      </a>
+    </div>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Changer de thème">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    </button>
+    <button class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- NAV CATÉGORIES STICKY -->
+<div class="e5-cat-nav">
+  <div class="e5-cat-nav-inner">
+    <a href="#cat1" class="cat-btn">🗃️ Patrimoine</a>
+    <a href="#cat2" class="cat-btn">🎫 Incidents</a>
+    <a href="#cat3" class="cat-btn">🌐 En ligne</a>
+    <a href="#cat4" class="cat-btn">📊 Projet</a>
+    <a href="#cat5" class="cat-btn">🚀 Services</a>
+    <a href="#cat6" class="cat-btn">👤 Pro</a>
+  </div>
+</div>
+
+<main class="page" style="padding-top:0;">
+
+  <!-- HEADER -->
+  <section class="page-header" style="padding:56px 0 48px; border-bottom:1px solid var(--border);">
+    <div class="e5-wrap">
+      <div class="section-tag">BTS SIO SLAM · Épreuve E5</div>
+      <h1 style="margin:12px 0 14px;">Tableau de <em style="font-style:normal;color:var(--accent);">Compétences</em></h1>
+      <p>22 compétences réparties sur 6 catégories. Cliquez sur le <strong style="color:var(--text-strong)">+</strong> de chaque compétence pour voir comment je l'ai validée.</p>
+      <div class="e5-stats">
+        <div class="e5-stat"><span class="e5-stat-num" data-target="22">0</span><span class="e5-stat-label">Compétences</span></div>
+        <div class="e5-stat"><span class="e5-stat-num" data-target="6">0</span><span class="e5-stat-label">Catégories</span></div>
+        <div class="e5-stat"><span class="e5-stat-num" data-target="4">0</span><span class="e5-stat-label">Projets</span></div>
+        <div class="e5-stat"><span class="e5-stat-num" data-target="10">0</span><span class="e5-stat-label">Sem. stages</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TÉLÉCHARGEMENTS -->
+  <section style="border-bottom:1px solid var(--border);padding:18px 0;background:color-mix(in srgb,var(--accent) 3%,transparent);">
+    <div class="e5-wrap">
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:0.63rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.15em;flex-shrink:0;">📎 Documents :</span>
+        <a href="assets/docs/tableau_synthese.pdf" target="_blank" rel="noopener" class="dl-btn dl-primary">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Tableau de synthèse
+        </a>
+        <a href="assets/docs/rapport_stage1.pdf" target="_blank" rel="noopener" class="dl-btn">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Rapport Stage 1 · Juin–Juil. 2025
+        </a>
+        <a href="assets/docs/rapport_stage2.pdf" target="_blank" rel="noopener" class="dl-btn">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Rapport Stage 2 · Nov.–Déc. 2025
+        </a>
+      </div>
+    </div>
+  </section>
+  <section class="e5-section" id="cat1">
+    <div class="e5-wrap">
+      <div class="cat-header reveal">
+        <span class="cat-tag">Activité 1.1</span>
+        <h2 class="cat-title">Patrimoine <em>informatique.</em></h2>
+        <p class="cat-desc">Recenser les ressources, exploiter les référentiels, gérer les habilitations et assurer la continuité des services.</p>
+      </div>
+      <div class="comp-list" data-cat="1"></div>
+    </div>
+  </section>
+
+  <!-- CATÉGORIE 2 -->
+  <section class="e5-section" id="cat2">
+    <div class="e5-wrap">
+      <div class="cat-header reveal">
+        <span class="cat-tag">Activité 1.2</span>
+        <h2 class="cat-title">Incidents & <em>demandes.</em></h2>
+        <p class="cat-desc">Collecter, suivre et traiter les demandes d'assistance réseau, système et applicatif.</p>
+      </div>
+      <div class="comp-list" data-cat="2"></div>
+    </div>
+  </section>
+
+  <!-- CATÉGORIE 3 -->
+  <section class="e5-section" id="cat3">
+    <div class="e5-wrap">
+      <div class="cat-header reveal">
+        <span class="cat-tag">Activité 1.3</span>
+        <h2 class="cat-title">Présence <em>en ligne.</em></h2>
+        <p class="cat-desc">Valoriser l'image numérique d'une organisation, référencer ses services et faire évoluer un site web.</p>
+      </div>
+      <div class="comp-list" data-cat="3"></div>
+    </div>
+  </section>
+
+  <!-- CATÉGORIE 4 -->
+  <section class="e5-section" id="cat4">
+    <div class="e5-wrap">
+      <div class="cat-header reveal">
+        <span class="cat-tag">Activité 1.4</span>
+        <h2 class="cat-title">Mode <em>projet.</em></h2>
+        <p class="cat-desc">Analyser les objectifs, planifier les activités et évaluer les indicateurs de suivi.</p>
+      </div>
+      <div class="comp-list" data-cat="4"></div>
+    </div>
+  </section>
+
+  <!-- CATÉGORIE 5 -->
+  <section class="e5-section" id="cat5">
+    <div class="e5-wrap">
+      <div class="cat-header reveal">
+        <span class="cat-tag">Activité 1.5</span>
+        <h2 class="cat-title">Mise à <em>disposition.</em></h2>
+        <p class="cat-desc">Tester, déployer un service informatique et accompagner les utilisateurs dans sa prise en main.</p>
+      </div>
+      <div class="comp-list" data-cat="5"></div>
+    </div>
+  </section>
+
+  <!-- CATÉGORIE 6 -->
+  <section class="e5-section" id="cat6">
+    <div class="e5-wrap">
+      <div class="cat-header reveal">
+        <span class="cat-tag">Activité 1.6</span>
+        <h2 class="cat-title">Développement <em>professionnel.</em></h2>
+        <p class="cat-desc">Construire son environnement d'apprentissage, mettre en œuvre une veille et gérer son identité professionnelle.</p>
+      </div>
+      <div class="comp-list" data-cat="6"></div>
+    </div>
+  </section>
+
+  <!-- RETOUR -->
+  <section style="padding:40px 0;">
+    <div class="e5-wrap" style="display:flex;gap:14px;flex-wrap:wrap;">
+      <a href="index.html" class="btn-secondary">← Portfolio</a>
+      <a href="e6.html" class="btn-secondary">Épreuve E6 →</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span>© 2026 Kaveh OSTAD — BTS SIO SLAM · EFREI Paris</span>
+  <span>
+    <a href="https://www.linkedin.com/in/kaveh-ostad/" target="_blank" rel="noopener">LinkedIn</a> ·
+    <a href="https://github.com/Su-Kaveh" target="_blank" rel="noopener">GitHub</a> ·
+    <a href="contact.html">Contact</a>
+  </span>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script>
+/* ══════════════════════════════════════════
+   DONNÉES DES 22 COMPÉTENCES
+══════════════════════════════════════════ */
+const COMPETENCES = {
+  c1:{num:'C1',status:'validee',title:'Recensement et identification des ressources numériques',
+    desc:'Le recensement du patrimoine informatique est exhaustif et réalisé au moyen d\'un outil de gestion des actifs informatiques.',
+    how:'Dans le cadre du TP C1 à l\'EFREI, j\'ai installé un serveur GLPI sur VM Debian (Apache, PHP 8.3, MariaDB), déployé l\'agent GLPI sur 6 machines (3 hôtes + 3 VM) et réalisé un inventaire réseau complet avec export CSV/PDF. En stage à la DISP de Paris, j\'ai utilisé EasyVista pour mettre à jour l\'inventaire, numéroter les postes neufs Lenovo/Dell et organiser l\'armoire matériel.',
+    projets:['TP GLPI EFREI','Stage 1 DISP (juin-juil. 2025)','Stage 2 DISP/SPIP (nov-déc. 2025)'],
+    tools:['GLPI','EasyVista','Agent GLPI','nmap','Debian Linux','MariaDB'],
+    images:['assets/preuves/c1-glpi-logiciels.png','assets/preuves/c1-glpi-ordinateurs.png','assets/preuves/c1-glpi-vm-inventaire.png','assets/preuves/c1-stage2-armoire.png','assets/preuves/c1-stage2-reception.png']},
+
+  c2:{num:'C2',status:'validee',title:'Exploitation des référentiels, normes et standards',
+    desc:'Les référentiels, normes et standards sont mobilisés de façon pertinente.',
+    how:'J\'ai suivi la documentation officielle GLPI pour son installation complète sur Debian. En stage DISP, j\'ai appliqué le référentiel ITIL pour structurer la gestion des incidents (création, qualification, escalade, clôture avec compte rendu). J\'ai également analysé la méthodologie cycle en V via les cahiers des charges techniques du DSI.',
+    projets:['TP GLPI EFREI','Stages DISP (2025)'],
+    tools:['ITIL','Cycle en V','Documentation officielle GLPI']},
+
+  c3:{num:'C3',status:'validee',title:'Mise en place et vérification des niveaux d\'habilitation',
+    desc:'Les droits mis en place correspondent aux habilitations des acteurs.',
+    how:'Dans le TP C7 GLPI, j\'ai créé et géré différents profils (Super-Admin, Technicien, Self-service) avec des droits distincts par entité, et configuré des règles d\'affectation automatique des tickets selon la catégorie ITIL. En stage DISP, j\'ai géré les comptes via ODIN relié à Active Directory (création, réactivation, suppression, relances AD).',
+    projets:['TP GLPI EFREI (C7)','Stages DISP (2025)'],
+    tools:['GLPI','ODIN','Active Directory','Windows Server'],
+    images:['assets/preuves/c3-glpi-utilisateurs.png','assets/preuves/c3-glpi-entites.png','assets/preuves/c3-glpi-regle-affectation.png','assets/preuves/c3-glpi-regles-habilitations.png']},
+
+  c4:{num:'C4',status:'validee',title:'Vérification des conditions de la continuité d\'un service',
+    desc:'Les conditions de continuité et de reprise d\'un service sont vérifiées et les manquements sont signalés.',
+    how:'En stage 2 au SPIP de Paris (site initialement sans référent IT), j\'ai participé à la remise en service complète de l\'infrastructure, réalisé de la maintenance préventive et curative (diagnostic, remplacement de postes défectueux), et participé à la mise à jour du logiciel de sûreté gérant les caméras et alarmes — intervention nécessitant rigueur et respect des consignes de sécurité.',
+    projets:['Stage 2 DISP/SPIP (nov-déc. 2025)'],
+    tools:['EasyVista','Windows 11','Outils de diagnostic'],
+    images:['assets/preuves/c4-stage1-salle-serveurs.png','assets/preuves/c4-stage2-baie-reseau.png']},
+
+  c5:{num:'C5',status:'validee',title:'Gestion des sauvegardes',
+    desc:'Les sauvegardes sont réalisées dans les conditions prévues. Les restaurations sont testées et opérationnelles.',
+    how:'Dans le cadre du TP GLPI, j\'ai mis en place une sauvegarde de la base de données MariaDB via la commande mysqldump : export complet de la base promex_db au format .sql, planification de la sauvegarde et vérification de la restauration sur un environnement de test. En stage 1 à la DISP, j\'ai également activé le chiffrement BitLocker sur les 6 postes masterisés pour protéger les données au repos en cas de perte ou vol du matériel.',
+    projets:['TP GLPI EFREI','Stage 1 DISP (juin-juil. 2025)'],
+    tools:['mysqldump','MariaDB','BitLocker','Windows 11 Pro','Bash']},
+
+  c6:{num:'C6',status:'validee',title:'Vérification du respect des règles d\'utilisation des ressources numériques',
+    desc:'Les écarts par rapport aux règles d\'utilisation des ressources numériques sont détectés et signalés.',
+    how:'En stage au Ministère de la Justice (DISP + SPIP de Paris), j\'ai travaillé dans un contexte institutionnel à sécurité renforcée : respect strict de la charte informatique du Ministère, contrôle des accès aux ressources numériques sensibles, et application des procédures internes pour chaque intervention. Le milieu pénitentiaire impose des contraintes particulièrement strictes.',
+    projets:['Stages DISP (2025)'],
+    tools:['Charte informatique MJ','Procédures DSI pénitentiaire']},
+
+  c7:{num:'C7',status:'validee',title:'Collecte, suivi et orientation des demandes',
+    desc:'Les demandes d\'assistance ont été prises en compte, correctement diagnostiquées et leur traitement correspond aux attentes.',
+    how:'Dans le TP C7 GLPI, j\'ai paramétré la gestion complète du ticketing : cycle de vie (Nouveau → En cours → Résolu → Clos), catégories ITIL (Réseau, Logiciel, Matériel, Comptes), règles d\'affectation automatique. En stage DISP, j\'ai traité des tickets quotidiennement via GLPI (TID), Jaber, Outlook et téléphone, avec escalade N2 selon ITIL.',
+    projets:['TP GLPI EFREI (C7)','Stages DISP (2025)'],
+    tools:['GLPI','Jaber','Outlook','ITIL','TID'],
+    images:['assets/preuves/c7-glpi-dashboard.png','assets/preuves/c7-glpi-liste-tickets.png','assets/preuves/c7-glpi-ticket-resolu.png','assets/preuves/c7-glpi-categories-itil.png']},
+
+  c8:{num:'C8',status:'validee',title:'Traitement des demandes concernant les services réseau et système',
+    desc:'La réponse à une demande d\'assistance est conforme à la procédure. Méthode de diagnostic et résolution adaptée.',
+    how:'En stage 1 à la DISP, j\'ai collaboré avec l\'Unité Technique sur : la configuration de VLANs, trunks et switchs, la manipulation de firewalls Fortinet 90G/120G et Stormshield, le brassage RJ45 et l\'organisation des baies de brassage. J\'ai également géré des problèmes de connexion réseau, de sessions AD et de VPN, et réalisé la masterisation PXE.',
+    projets:['Stage 1 DISP (juin-juil. 2025)'],
+    tools:['Fortinet 90G/120G','Stormshield','VLANs','Active Directory','PXE','RJ45'],
+    images:['assets/preuves/c8-stage1-baies-brassage.png','assets/preuves/c8-stage1-fortinet.png']},
+
+  c9:{num:'C9',status:'validee',title:'Traitement des demandes concernant les applications',
+    desc:'La réponse est conforme à la procédure et adaptée à l\'utilisateur.',
+    how:'En stage 2 au SPIP, j\'ai assuré le support applicatif quotidien : aide sur Resana, archivage de boîtes mail saturées, réinitialisation de sessions, relances AD, rédaction de mails pro pour demandes d\'accès. Dans le Cabinet Médical, j\'ai développé la gestion des rôles (admin/utilisateur) et une authentification PHP sécurisée.',
+    projets:['Stage 2 DISP/SPIP (nov-déc. 2025)','Cabinet Médical PHP MVC (fév. 2026)'],
+    tools:['Resana','Outlook','Active Directory','PHP','Sessions PHP','MySQL'],
+    image:'assets/preuves/c9-stage2-mail-pro.png'},
+
+  c10:{num:'C10',status:'validee',title:'Valorisation de l\'image de l\'organisation sur les médias numériques',
+    desc:'L\'image de l\'organisation est conforme aux attentes et valorisée. Obligations juridiques respectées.',
+    how:'J\'ai valorisé mon image professionnelle en ligne à travers ce portfolio : identité visuelle cohérente (charte graphique, typographie, mode jour/nuit), présence sur LinkedIn et GitHub avec des profils à jour, balises Open Graph pour le partage sur les réseaux sociaux, et respect des bonnes pratiques de publication numérique. Le portfolio présente mes réalisations, certifications et projet professionnel Data Analyst de façon structurée et accessible, avec une navigation claire et un design responsive. Cette démarche correspond à la valorisation de l\'image d\'un acteur numérique sur les médias en ligne.',
+    projets:['Portfolio BTS SIO — Ce site','LinkedIn (kaveh-ostad)','GitHub (Su-Kaveh)'],
+    tools:['HTML/CSS/JS','Open Graph','LinkedIn','GitHub Pages','Charte graphique','SEO']},
+
+  c11:{num:'C11',status:'validee',title:'Référencement des services en ligne et mesure de leur visibilité',
+    desc:'La visibilité des services en ligne de l\'organisation est satisfaisante.',
+    how:'Dans un TP dédié, j\'ai créé une landing page HTML/CSS en appliquant les bonnes pratiques SEO : balises meta (title, description, keywords), Open Graph, HTML sémantique et attributs alt. J\'ai déployé la page sur GitHub Pages et intégré Google Analytics (GA4) pour analyser les statistiques en temps réel : visiteurs actifs, sources de trafic, pages visitées. Cette démarche couvre référencer un service ET mesurer sa visibilité.',
+    projets:['TP Référencement — Landing page GitHub Pages','Google Analytics (GA4)'],
+    tools:['HTML/CSS','Balises meta SEO','Open Graph','GitHub Pages','Google Analytics GA4'],
+    image:'assets/preuves/c11-analytics.png'},
+
+  c12:{num:'C12',status:'validee',title:'Participation à l\'évolution d\'un site Web exploitant les données',
+    desc:'Le site Web a évolué conformément au besoin exprimé.',
+    how:'J\'ai développé une application web de gestion d\'un cabinet médical en PHP en reprenant et adaptant un projet existant (architecture "Orange" télécom → domaine médical). J\'ai mis en place une architecture MVC complète avec modèle, vues et contrôleur, une BDD MySQL de 5 tables (Patient, Médecin, Prescription, Rdv, User), des requêtes PDO sécurisées contre les injections SQL, et un système d\'authentification avec deux niveaux de rôles.',
+    projets:['Cabinet Médical PHP MVC (fév. 2026)'],
+    tools:['PHP 8','MySQL','PDO','Architecture MVC','Sessions PHP','HTML/CSS'],
+    image:'assets/preuves/c12-logidesk.png'},
+
+  c13:{num:'C13',status:'validee',title:'Analyse des objectifs et modalités d\'organisation d\'un projet',
+    desc:'Objectifs et modalités explicitées. Analyse des besoins et de l\'existant pertinente.',
+    how:'Dans le projet Jeu d\'échecs, j\'ai analysé le code hérité depuis GitHub (reprise de l\'existant), défini les objectifs (4 pièces, mode 1v1 + IA, SDL2, sauvegarde), identifié les contraintes (équipe de 5, délais) et réparti les rôles. En stage 2 DISP, j\'ai participé à l\'analyse des besoins pour la remise en service du SPIP Paris et à la constitution d\'un dossier technique devis Dell (9 écrans HS).',
+    projets:['Jeu d\'échecs simplifié (C)','Stage 2 DISP/SPIP'],
+    tools:['GitHub','Confluence','Discord','Cahier des charges'],
+    image:'assets/preuves/c13-tableau-taches.png'},
+
+  c14:{num:'C14',status:'validee',title:'Planification des activités',
+    desc:'Activités planifiées selon méthodologie, ressources mobilisées efficacement.',
+    how:'J\'ai assuré la gestion de projet du Jeu d\'échecs (équipe de 5) : diagramme de PERT avec antécédents et durées, tableau des tâches, diagramme de Gantt prévisionnel, et suivi quotidien du tableau Trello en méthode Kanban. La coordination s\'est faite à distance via Discord et Confluence.',
+    projets:['Jeu d\'échecs simplifié (C)'],
+    tools:['Trello (Kanban)','Diagramme de PERT','Diagramme de Gantt','Confluence','Discord'],
+    images:['assets/preuves/c14-trello.png','assets/preuves/c14-gantt.png','assets/preuves/c14-pert.png']},
+
+  c15:{num:'C15',status:'validee',title:'Évaluation des indicateurs de suivi et analyse des écarts',
+    desc:'Livrables conformes, projet documenté, écarts justifiés, communication adaptée.',
+    how:'À la fin du projet Jeu d\'échecs, j\'ai réalisé une analyse d\'écarts formelle entre la maquette Figma initiale et le produit final livré. Deux écarts majeurs identifiés : (1) l\'interface graphique finale (SDL2, style terminal monochrome) diverge significativement de la maquette Figma — contrainte technique liée au choix de SDL2 et à la complexité de l\'implémentation graphique ; (2) le chat avec l\'adversaire prévu en maquette n\'a pas été intégré dans le produit final — fonctionnalité déprioritisée au profit des mécaniques de jeu essentielles. Ces écarts ont été documentés, justifiés et présentés à l\'équipe.',
+    projets:['Jeu d\'échecs simplifié (C)'],
+    tools:['Trello','Gantt','Rapport d\'écarts','Confluence'],
+    image:'assets/preuves/c15-écart.png'},
+
+  c16:{num:'C16',status:'validee',title:'Réalisation des tests d\'intégration et d\'acceptation',
+    desc:'Tests pertinents rédigés et effectués, outils appropriés, rapport de test produit.',
+    how:'Dans le Cabinet Médical, j\'ai rédigé des scénarios de tests CRUD (patients, médecins, prescriptions, RDV), préparé un script SQL de données d\'exemple, et validé l\'intégrité de la BDD et le comportement des formulaires. En stage DISP, j\'ai effectué des tests de performance, compatibilité réseau et conformité des applications métiers sur les postes déployés avant remise aux agents.',
+    projets:['Cabinet Médical PHP MVC','Stages DISP (2025)'],
+    tools:['PHP','MySQL','Tests manuels','Script SQL test','Windows 11']},
+
+  c17:{num:'C17',status:'validee',title:'Déploiement d\'un service',
+    desc:'Le service déployé est opérationnel et donne satisfaction à l\'utilisateur.',
+    how:'En stage 1 à la DISP, j\'ai participé à la masterisation de 6 postes via PXE + BIOS, avec installation de Windows 11 Pro Arium 11.4 LTS, activation de BitLocker, et configuration complète (réseau, VPN, AD). En stage 2, j\'ai réceptionné, inventorié, numéroté et configuré des postes Lenovo/Dell. Dans le TP GLPI, j\'ai déployé le service complet sur VM Debian (Apache, PHP 8.3, MariaDB, virtual host).',
+    projets:['Stage 1 DISP (juin-juil. 2025)','Stage 2 DISP/SPIP','TP GLPI EFREI'],
+    tools:['PXE','BIOS','Windows 11 Pro Arium 11.4','BitLocker','Active Directory','VPN','GLPI/Debian'],
+    images:['assets/preuves/c17-stage2-deploiement.png','assets/preuves/c17-stage1-laptops-piles.png','assets/preuves/c17-stage1-masterisation.png','assets/preuves/c17-stage2-bios-dell.png']},
+
+  c18:{num:'C18',status:'validee',title:'Accompagnement des utilisateurs dans la mise en place d\'un service',
+    desc:'Support d\'information disponible, modalités d\'accompagnement définies.',
+    how:'En stage 2 au SPIP de Paris, j\'ai accompagné les agents sur les nouveaux postes déployés : aide à la prise en main de Windows 11, assistance sur les logiciels métiers (Resana, Outlook), rédaction de mails professionnels pour les demandes d\'accès. Le contexte particulier du SPIP (sans référent IT initial) m\'a demandé une forte autonomie.',
+    projets:['Stage 2 DISP/SPIP (nov-déc. 2025)'],
+    tools:['Outlook','Jaber','Resana','Support téléphonique'],
+    image:'assets/preuves/c18-stage2-mail-accompagnement.png'},
+
+  c19:{num:'C19',status:'validee',title:'Mise en place de l\'environnement d\'apprentissage personnel',
+    desc:'Besoins de formation identifiés, environnement d\'apprentissage personnel délimité et expliqué.',
+    how:'J\'ai structuré un environnement de travail adapté à mes objectifs Data : VS Code avec extensions dédiées, GitHub (Su-Kaveh) pour versionner tous mes projets avec README documentés, et des outils Data (BigQuery, Power BI, Metabase) pour me former à l\'analyse. Ce portfolio centralise mes apprentissages BTS SIO.',
+    projets:['Portfolio BTS SIO','GitHub Su-Kaveh'],
+    tools:['VS Code','GitHub','BigQuery','Power BI','Metabase','Python','SQL']},
+
+  c20:{num:'C20',status:'validee',title:'Outils et stratégies de veille informationnelle',
+    desc:'Veille régulière pour repérer les techniques et technologies émergentes.',
+    how:'J\'ai mis en place une veille structurée sur l\'essor du Low-Code / No-Code, combinant Pull (Feedly/RSS, Medium, Dev.to, blogs éditeurs Bubble/Webflow/n8n) et Push (Google Alerts sur "Low-Code", "No-Code", "Citizen Developer", newsletters tech). Les résultats sont synthétisés sur la page dédiée de ce portfolio.',
+    projets:['Veille Low-Code / No-Code'],
+    tools:['Google Alerts','Feedly','RSS','Newsletters tech','Medium']},
+
+  c21:{num:'C21',status:'validee',title:'Gestion de l\'identité professionnelle',
+    desc:'Identité professionnelle pertinente et visible sur un réseau social professionnel.',
+    how:'J\'ai construit une identité cohérente sur 3 espaces : LinkedIn (kaveh-ostad) avec parcours, certifications et compétences à jour ; GitHub (Su-Kaveh) avec mes dépôts de projets versionnés ; et ce portfolio HTML/CSS/JS qui centralise toutes mes réalisations BTS SIO et valorise mon profil Data Analyst.',
+    projets:['LinkedIn','GitHub Su-Kaveh','Portfolio BTS SIO'],
+    tools:['LinkedIn','GitHub','HTML/CSS/JS','SEO']},
+
+  c22:{num:'C22',status:'validee',title:'Développement du projet professionnel',
+    desc:'Identité professionnelle pertinente et visible sur un réseau social professionnel.',
+    how:'Mon projet pro est clairement défini : après BTS MCO (management, 2022-2024) et BTS SIO SLAM (2024-2026), je vise une spécialisation Data avec une alternance Bac+3 pour la rentrée 2026 (3j/2j). Objectif : Data Analyst. J\'ai obtenu 2 certifications (PIX, ANSSI 100%) et développé des compétences concrètes (SQL, BigQuery, Power BI, Metabase).',
+    projets:['Projet professionnel Data Analyst'],
+    tools:['SQL','BigQuery','Power BI','Metabase','Python','PIX','ANSSI']}
+};
+
+/* ══════════════════════════════════════════
+   MAPPING CATÉGORIES → COMPÉTENCES
+══════════════════════════════════════════ */
+const CAT_MAP = {
+  1: ['c1','c2','c3','c4','c5','c6'],
+  2: ['c7','c8','c9'],
+  3: ['c10','c11','c12'],
+  4: ['c13','c14','c15'],
+  5: ['c16','c17','c18'],
+  6: ['c19','c20','c21','c22']
+};
+
+const STATUS_LABELS = { validee: 'Validée', partielle: 'Partielle', 'en-cours': 'En cours' };
+
+/* ══════════════════════════════════════════
+   RENDU DES ITEMS ACCORDÉON
+══════════════════════════════════════════ */
+function renderCompItems() {
+  Object.entries(CAT_MAP).forEach(([cat, ids]) => {
+    const container = document.querySelector(`.comp-list[data-cat="${cat}"]`);
+    if (!container) return;
+
+    ids.forEach(id => {
+      const d = COMPETENCES[id];
+      if (!d) return;
+
+      const item = document.createElement('div');
+      item.className = 'comp-item';
+      item.style.opacity = '1';
+      item.dataset.comp = id;
+
+      // Projets tags
+      const projetTags = d.projets.map(p => `<span class="comp-projet-tag">${p}</span>`).join('');
+      const toolTags = d.tools.map(t => `<span class="comp-tool-tag">${t}</span>`).join('');
+
+      // Preuves : d.image (string) OU d.images (array)
+      const imgs = d.images || (d.image ? [d.image] : []);
+      const proofsHtml = imgs.length > 0 ? `
+        <div>
+          <span class="comp-body-section-label">📸 Preuve(s) — Captures d'écran</span>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-top:6px;">
+            ${imgs.map(src => `<img src="${src}" alt="Preuve ${d.num}" class="comp-proof-img" loading="lazy">`).join('')}
+          </div>
+        </div>` : '';
+
+      item.innerHTML = `
+        <div class="comp-item-header">
+          <span class="comp-num">${d.num}</span>
+          <div class="comp-item-info">
+            <span class="comp-item-title">${d.title}</span>
+          </div>
+          <span class="comp-status ${d.status}">${STATUS_LABELS[d.status]}</span>
+          <button class="comp-expand" aria-label="Voir le détail de ${d.num}">+</button>
+        </div>
+        <div class="comp-item-body">
+          <div class="comp-body-inner">
+            <p class="comp-body-quote">${d.desc}</p>
+            <div>
+              <span class="comp-body-section-label">Comment j'ai validé cette compétence</span>
+              <p class="comp-body-text">${d.how}</p>
+            </div>
+            <div>
+              <span class="comp-body-section-label">Projet(s) associé(s)</span>
+              <div class="comp-body-tags">${projetTags}</div>
+            </div>
+            <div>
+              <span class="comp-body-section-label">Technologies utilisées</span>
+              <div class="comp-body-tags">${toolTags}</div>
+            </div>
+            ${proofsHtml}
+          </div>
+        </div>`;
+
+      container.appendChild(item);
+    });
+  });
+}
+
+/* ══════════════════════════════════════════
+   ACCORDÉON — TOGGLE
+══════════════════════════════════════════ */
+function initAccordion() {
+  document.querySelectorAll('.comp-item').forEach(item => {
+    const header = item.querySelector('.comp-item-header');
+    header.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      // Fermer tous les autres de la même liste
+      const list = item.closest('.comp-list');
+      list.querySelectorAll('.comp-item.open').forEach(other => {
+        if (other !== item) other.classList.remove('open');
+      });
+      item.classList.toggle('open', !isOpen);
+    });
+    // Cursor ring expand
+    header.addEventListener('mouseenter', () => document.querySelector('.cursor-ring')?.classList.add('expand'));
+    header.addEventListener('mouseleave', () => document.querySelector('.cursor-ring')?.classList.remove('expand'));
+  });
+}
+
+/* ══════════════════════════════════════════
+   NAV CATÉGORIES — HIGHLIGHT AU SCROLL
+══════════════════════════════════════════ */
+function initCatNav() {
+  const sections = document.querySelectorAll('.e5-section');
+  const btns = document.querySelectorAll('.cat-btn');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const id = e.target.id;
+        btns.forEach(b => b.classList.toggle('active', b.getAttribute('href') === '#' + id));
+      }
+    });
+  }, { threshold: 0.25 });
+  sections.forEach(s => obs.observe(s));
+}
+
+/* ══════════════════════════════════════════
+   INIT
+══════════════════════════════════════════ */
+renderCompItems();
+initAccordion();
+initCatNav();
+</script>
+</body>
+</html>
